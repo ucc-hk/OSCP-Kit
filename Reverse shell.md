@@ -42,4 +42,4 @@ stty rows 55 columns 205   //on victim machine. See stty -a
 
 	sometime certain out going traffic is blocked by your victim   
 	nc -nvv -w 1 -z "Your IP Address" 1-100  
-s	open Wireshark  
+	open Wireshark  
