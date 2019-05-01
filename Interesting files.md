@@ -1,9 +1,9 @@
-# Interesting files that worth looking at
-
+## Interesting files that worth looking at
+Please see raw-->   
 Search the file permission with root:
 usr/bin/find -perm -g=s -o -perm -4000 ! -type l -maxdepth 3 -exec ls -ld {} \; 2>/dev/null
 
-## Windows  
+### Windows  
 c:\windows\system32\eula.txt  
 cl\windows\system32\license.rtf  
 
@@ -30,6 +30,6 @@ c:\home\bin\stable\apache\php.ini
 
 https://www.gracefulsecurity.com/path-traversal-cheat-sheet-windows/
 
-## Linux
+### Linux
 https://www.gracefulsecurity.com/path-traversal-cheat-sheet-linux/
 
