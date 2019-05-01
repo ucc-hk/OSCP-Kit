@@ -33,7 +33,8 @@ search NSE
 locate -r '\.nse$' | grep 'smb\|ssl'  
 
 ##### Reference
-
+https://github.com/togie6/Windows-Privesc  
 http://www.fuzzysecurity.com/tutorials/16.html  
+https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/  
 
 https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/
