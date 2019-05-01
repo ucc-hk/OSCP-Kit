@@ -10,6 +10,6 @@ https://github.com/exrienz/DirtyCow
 
 
 
-***Nmap***
+***Nmap***      
 search NSE
 locate -r '\.nse$' | grep 'smb\|ssl'
