@@ -15,7 +15,7 @@ Hashcat << check type online - hashcat sample hash
 hashcat -m\<type> -a 0 /usr/share/wordlists/rockyou.txt hash.txt
 
 ### Online
-HTTP post form
+Use Brup, HTTP post form
 
 hydra -L <wordlist> -P<password list> <IP> http-post-form "<file path>:username=^USER^&password=^PASS^&Login=Login:<fail message>"
 
