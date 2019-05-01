@@ -5,7 +5,7 @@ Any possibility that the user will re use the password????
 Generate a custom wordlist
 cewl -w createWordlist.txt -m <min password length> https://www.example.com
 
-### Offline
+### Online
 https://hashes.org/search.php
 
 john the ripper
