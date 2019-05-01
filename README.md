@@ -1,4 +1,4 @@
-# OSCP cheat sheet
+# OSCP Kit
 
 Just some oscp cheat sheet stuff that I copied for myself. It may look messy, I will rewrite it to improvement for OSCP preparation.
 
