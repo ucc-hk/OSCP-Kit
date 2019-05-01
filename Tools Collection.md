@@ -2,7 +2,7 @@
 
 **For OffsecVM Checklist** 
 
-###A reconnaissance tool made for the OSCP labs###  
+##### A reconnaissance tool made for the OSCP labs
 Reconnoitre  
 https://github.com/codingo/Reconnoitre  
 
