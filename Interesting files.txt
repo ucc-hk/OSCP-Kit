@@ -1,5 +1,6 @@
 # Interesting files that worth looking at
 
+Search the file permission with root:
 usr/bin/find -perm -g=s -o -perm -4000 ! -type l -maxdepth 3 -exec ls -ld {} \; 2>/dev/null
 
 ## Windows  
