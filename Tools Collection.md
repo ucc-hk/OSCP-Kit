@@ -20,11 +20,11 @@ https://github.com/PowerShellMafia/PowerSploit/tree/master/Privesc
 
 ##### Privilege Escalation tool  
 Windows Kernel  
-https://github.com/SecWiki/windows-kernel-exploits
+https://github.com/SecWiki/windows-kernel-exploits  
 Linux Kernel  
-https://github.com/lucyoa/kernel-exploits
+https://github.com/lucyoa/kernel-exploits  
 Dirty Cow   
-https://github.com/exrienz/DirtyCow
+https://github.com/exrienz/DirtyCow  
 
 
 
