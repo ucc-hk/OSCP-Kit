@@ -1,4 +1,4 @@
-**            == Spawning a TTY Shell - Break out of Jail or limited shell == **
+**== Spawning a TTY Shell - Break out of Jail or limited shell ==**
 
 **PYTHON**
 -----
@@ -72,8 +72,7 @@ john@Kioptrix4:/var/www$ ls -la /usr/lib/lib_mysqludf_sys.so
 -rw-rw-rw- 1 root root 12896 2012-02-04 10:08 /usr/lib/lib_mysqludf_sys.so
 -----
 
-**          == Upgrading half shells to fully interactive TTYs without closing nc session. ==**
-
+**== Upgrading half shells to fully interactive TTYs without closing nc session. ==**
 -----
 python -c 'import pty; pty.spawn("/bin/bash")'
 -----
