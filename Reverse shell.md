@@ -34,8 +34,8 @@ echo $TERM     // on attacking machine
 sty raw echo   // attacking machine  
 fg             // attacking machine  
 reset          // attacking machine  
-export SHELL=BASH          //on victim machine	
-export TERM=xterm-256color //on victim machine  
+export SHELL=BASH          //on victim machine			
+export TERM=xterm-256color //on victim machine			 	 
 stty rows 55 columns 205   //on victim machine. See stty -a  
 
 **TBC. Check which port is allowed for reverse shell** 
