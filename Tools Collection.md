@@ -19,9 +19,9 @@ https://github.com/PowerShellMafia/PowerSploit/tree/master/Privesc
 
 
 ##### Privilege Escalation tool  
-Windows Kernel
+Windows Kernel  
 https://github.com/SecWiki/windows-kernel-exploits
-Linux Kernel
+Linux Kernel  
 https://github.com/lucyoa/kernel-exploits
 Dirty Cow   
 https://github.com/exrienz/DirtyCow
