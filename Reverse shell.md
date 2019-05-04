@@ -31,7 +31,7 @@ background remote shell with Ctrl+Z    // on victim machine
 stty -a | grep rows    //on attacking machine  
 speed 38400 baud; rows 55; columns 205; line = 0;  
 echo $TERM     // on attacking machine  
-sty raw echo   // attacking machine  
+stty raw echo   // attacking machine  
 fg             // attacking machine  
 reset          // attacking machine  
 export SHELL=BASH          //on victim machine   
