@@ -4,7 +4,7 @@
 **2. Cofirm overflow length, append "A" * length**  
 
 **3. Generate Offset to check EIP, ESP location**  
-```shell
+```
   /usr/share/metasploit-framework/tools/exploit/pattern_create.rb -l <length>
 
 	Record value on EIP, select ESP and click "Follow in Dump"  
