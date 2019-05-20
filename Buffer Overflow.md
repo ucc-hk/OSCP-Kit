@@ -4,6 +4,7 @@
 **2. Cofirm overflow length, append "A" * length**  
 
 **3. Generate Offset to check EIP, ESP location**  
+```shell
   /usr/share/metasploit-framework/tools/exploit/pattern_create.rb -l <length>
 
 	Record value on EIP, select ESP and click "Follow in Dump"  
@@ -11,7 +12,7 @@
 
 	Use !mona to find the offset after the overflow  
 	!mona findmsp  
-
+```
 **4. Confirm EIP by adding "B" * 4 after the number of offset. Also, add a number of "C" to track the number of characters that can be added after EIP to confirm length of shellcode**
 
 **5. Check bad characters after EIP. common bad characters are 0x00, 0x0A. Follow dump in ESP to check are there something missing after that.**
