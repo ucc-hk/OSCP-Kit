@@ -48,12 +48,12 @@ Add code:
 **Bonus: Running out of shell code space?**
 Use the front of payload instead
 1. Is there any register points to the front of our payload? EAX, EDX?
-2. Check JMP register address
-	/usr/share/metasploit-framework/tools/exploit/nasm_shell.rb
+2. Check JMP register address   
+	/usr/share/metasploit-framework/tools/exploit/nasm_shell.rb   
 
-	JMP EAX/EBX/ECX/EDX
+	JMP EAX/EBX/ECX/EDX  
 
-3. Append the address as shell code.
+3. Append the address as shell code.  
 4. Add payload to the front
 
 
